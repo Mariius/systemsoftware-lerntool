@@ -1,0 +1,111 @@
+.chapter-list {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-list h2 {
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.chapter-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.chapter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.chapter-card.completed {
+  border-color: #48bb78;
+  background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
+}
+
+.chapter-number {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.chapter-card.completed .chapter-number {
+  background: #48bb78;
+}
+
+.chapter-card h3 {
+  color: #2d3748;
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.chapter-description {
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.75rem 0;
+}
+
+.completion-badge {
+  background: #48bb78;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.completion-badge .score {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.chapter-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .chapter-list {
+    padding: 1.5rem;
+  }
+
+  .chapters-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .chapter-card h3 {
+    font-size: 1.15rem;
+  }
+}
