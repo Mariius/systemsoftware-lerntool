@@ -67,7 +67,7 @@ git push -u origin main
 2. Klicke auf **Settings** (Einstellungen)
 3. Scrolle zu **Pages** (in der linken Sidebar)
 4. Bei **Source** wähle: **GitHub Actions**
-5. Der Workflow wird automatisch getriggert beim nächsten Push
+5. Der Workflow wird automatisch getriggert beim  nächsten Push
 
 ### Schritt 4: Fertig!
 
