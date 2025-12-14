@@ -43,6 +43,19 @@ const Quiz = ({ chapter, onComplete, onBack }) => {
     }
   };
 
+  const handleSkipQuestion = () => {
+    setShowExplanation(false);
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  };
+
+  const handleQuitQuiz = () => {
+    if (window.confirm('Möchtest du das Quiz wirklich beenden? Dein Fortschritt geht verloren.')) {
+      onBack();
+    }
+  };
+
   const calculateResults = () => {
     let correct = 0;
     let totalMCQ = 0;
@@ -123,8 +136,8 @@ const Quiz = ({ chapter, onComplete, onBack }) => {
   return (
     <div className="quiz">
       <div className="quiz-header">
-        <button onClick={onBack} className="back-button">
-          ← Zurück
+        <button onClick={handleQuitQuiz} className="back-button quit-button">
+          ✕ Beenden
         </button>
         <div className="quiz-progress">
           <span>
@@ -202,13 +215,22 @@ const Quiz = ({ chapter, onComplete, onBack }) => {
         )}
 
         <div className="question-actions">
-          {!showExplanation && (isTextQuestion ?
-            (textAnswers[currentQuestion]?.trim().length > 10) :
-            (selectedAnswers[currentQuestion] !== undefined)
-          ) && (
-            <button onClick={handleCheckAnswer} className="check-button">
-              Antwort überprüfen
-            </button>
+          {!showExplanation && (
+            <>
+              {(isTextQuestion ?
+                (textAnswers[currentQuestion]?.trim().length > 10) :
+                (selectedAnswers[currentQuestion] !== undefined)
+              ) && (
+                <button onClick={handleCheckAnswer} className="check-button">
+                  Antwort überprüfen
+                </button>
+              )}
+              {currentQuestion < questions.length - 1 && (
+                <button onClick={handleSkipQuestion} className="skip-button">
+                  Überspringen →
+                </button>
+              )}
+            </>
           )}
           {showExplanation && (
             <button onClick={handleNextQuestion} className="next-button">

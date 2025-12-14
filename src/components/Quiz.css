@@ -165,10 +165,12 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .check-button,
-.next-button {
+.next-button,
+.skip-button {
   padding: 0.9rem 2rem;
   font-size: 1.05rem;
   font-weight: 600;
@@ -198,6 +200,35 @@
   background: #38a169;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(72, 187, 120, 0.3);
+}
+
+.skip-button {
+  background: #cbd5e0;
+  color: #2d3748;
+}
+
+.skip-button:hover {
+  background: #a0aec0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(160, 174, 192, 0.3);
+}
+
+.quit-button {
+  background: #fc8181;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quit-button:hover {
+  background: #f56565;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
 }
 
 /* Text Answer Styles */

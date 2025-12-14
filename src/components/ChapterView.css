@@ -152,23 +152,140 @@
   border-radius: 4px;
 }
 
+/* Topic Details Styles */
+.topic-details {
+  margin-bottom: 0.75rem;
+}
+
+.topic-title {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.topic-summary {
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0.75rem 0;
+  white-space: pre-line;
+}
+
+.topic-key-points {
+  margin-top: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.topic-key-points li {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.4rem;
+  background: #edf2f7;
+  border-left: 3px solid #667eea;
+  border-radius: 4px;
+  color: #2d3748;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.topic-key-points li::before {
+  content: "✓ ";
+  color: #667eea;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .chapter-view {
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .chapter-header {
+    margin-bottom: 1.5rem;
   }
 
   .chapter-view h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .chapter-desc {
+    font-size: 1rem;
+  }
+
+  .chapter-content {
+    gap: 1.5rem;
+  }
+
+  .topics-section,
+  .quiz-section,
+  .learning-tips {
+    padding: 1.25rem;
+    border-radius: 8px;
   }
 
   .chapter-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+  }
+
+  .topic-item {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .topic-title {
+    font-size: 1rem;
+  }
+
+  .topic-summary {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .topic-key-points li {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.65rem;
   }
 
   .start-quiz-button {
     width: 100%;
     padding: 0.9rem;
     font-size: 1rem;
+  }
+
+  .quiz-info p {
+    font-size: 1rem;
+  }
+
+  .learning-tips li {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices (phones, less than 400px) */
+@media (max-width: 400px) {
+  .chapter-view {
+    padding: 0.75rem;
+  }
+
+  .chapter-view h2 {
+    font-size: 1.25rem;
+  }
+
+  .chapter-number-badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .topics-section,
+  .quiz-section,
+  .learning-tips {
+    padding: 1rem;
+  }
+
+  .topic-summary {
+    font-size: 0.9rem;
   }
 }

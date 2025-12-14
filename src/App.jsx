@@ -6,6 +6,7 @@ import ChapterView from './components/ChapterView';
 import Quiz from './components/Quiz';
 import Terminal from './components/Terminal';
 import ProgressTracker from './components/ProgressTracker';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const [currentView, setCurrentView] = useState('home'); // home, chapter, quiz, terminal
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div className="app">
+      <ThemeToggle />
       <header className="app-header">
         <h1>📚 Systemsoftware Lerntool</h1>
         <p className="subtitle">Interaktives Lernen für den Master "Angewandte Künstliche Intelligenz"</p>
